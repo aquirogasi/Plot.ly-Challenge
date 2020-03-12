@@ -1,0 +1,385 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/object_03",
+  "definitions": {
+    "object_01": {
+      "type": "object",
+      "required": [
+        "id",
+        "ethnicity",
+        "gender",
+        "age",
+        "location",
+        "bbtype",
+        "wfreq"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "ethnicity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gender": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "age": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bbtype": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wfreq": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "object_02": {
+      "type": "object",
+      "required": [
+        "id",
+        "otu_ids",
+        "sample_values",
+        "otu_labels"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "otu_ids": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "$ref": "#/definitions/array_02"
+            },
+            {
+              "$ref": "#/definitions/array_04"
+            },
+            {
+              "$ref": "#/definitions/array_06"
+            },
+            {
+              "$ref": "#/definitions/array_07"
+            }
+          ]
+        },
+        "sample_values": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "$ref": "#/definitions/array_02"
+            },
+            {
+              "$ref": "#/definitions/array_04"
+            },
+            {
+              "$ref": "#/definitions/array_06"
+            },
+            {
+              "$ref": "#/definitions/array_07"
+            }
+          ]
+        },
+        "otu_labels": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/array_01"
+            },
+            {
+              "$ref": "#/definitions/array_03"
+            },
+            {
+              "$ref": "#/definitions/array_05"
+            },
+            {
+              "$ref": "#/definitions/array_06"
+            },
+            {
+              "$ref": "#/definitions/array_08"
+            }
+          ]
+        }
+      }
+    },
+    "object_03": {
+      "type": "object",
+      "required": [
+        "names",
+        "metadata",
+        "samples"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "names": {
+          "$ref": "#/definitions/array_01"
+        },
+        "metadata": {
+          "type": "array",
+          "title": "metadata",
+          "items": {
+            "$ref": "#/definitions/object_01"
+          }
+        },
+        "samples": {
+          "type": "array",
+          "title": "samples",
+          "items": {
+            "$ref": "#/definitions/object_02"
+          }
+        }
+      }
+    },
+    "array_01": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "array_02": {
+      "type": "array",
+      "title": "otu_ids, sample_values",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 9,
+      "maxItems": 9,
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "array_03": {
+      "type": "array",
+      "title": "otu_labels",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 9,
+      "maxItems": 9,
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "array_04": {
+      "type": "array",
+      "title": "otu_ids, sample_values",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 10,
+      "maxItems": 10,
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "array_05": {
+      "type": "array",
+      "title": "otu_labels",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 10,
+      "maxItems": 10,
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "array_06": {
+      "type": "array"
+    },
+    "array_07": {
+      "type": "array",
+      "title": "otu_ids, sample_values",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 2,
+      "maxItems": 2,
+      "items": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "array_08": {
+      "type": "array",
+      "title": "otu_labels",
+      "description": "tuple type",
+      "additionalItems": false,
+      "minItems": 2,
+      "maxItems": 2,
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
